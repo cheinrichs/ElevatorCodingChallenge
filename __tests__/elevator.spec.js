@@ -10,4 +10,12 @@ describe("Elevator functionality", () => {
 
     expect(actual).toEqual(expected);
   });
+
+  test("it should not move the elevator if only one floor is given", () => {
+    const input = [12];
+    const expected = [0, 12];
+    const actual = simulateElevator(input);
+
+    expect(actual).toEqual(expected);
+  });
 });
