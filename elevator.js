@@ -36,7 +36,6 @@ function simulateElevator(floors) {
     previousFloor = currentFloor;
   });
 
-  floorsTraveled.unshift(travelTime * SINGLE_FLOOR_TRAVEL_TIME);
-  return floorsTraveled;
+  return [travelTime * SINGLE_FLOOR_TRAVEL_TIME, floorsTraveled];
 }
 export default simulateElevator;

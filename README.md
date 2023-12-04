@@ -53,7 +53,7 @@ The output array contains two elements: Total travel time (in seconds) and Seque
 Example output:
 
 ```
-560 [12,2,9,1,32]
+[560 [12,2,9,1,32]]
 ```
 
 ## Running tests:
@@ -63,6 +63,8 @@ From the `ElevatorCodingChallenge` parent directory:
 ```bash
 npm test
 ```
+
+    Or view the Jest action in the github actions tab of the repository
 
 ## Constants
 

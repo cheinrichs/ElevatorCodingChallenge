@@ -2,10 +2,8 @@ import simulateElevator from "../elevator.js";
 
 describe("Elevator functionality", () => {
   test("it should correctly move the elevator based on the input in the prompt", () => {
-    // Inputs: [list of floors to visit] (e.g. elevator start=12 floor=2,9,1,32)
-    // Outputs: [total travel time, floors visited in order] (e.g. 560 12,2,9,1,32)
     const input = [12, 2, 9, 1, 32];
-    const expected = [560, 12, 2, 9, 1, 32];
+    const expected = [560, [12, 2, 9, 1, 32]];
     const actual = simulateElevator(input);
 
     expect(actual).toEqual(expected);
@@ -48,7 +46,7 @@ describe("Elevator functionality", () => {
 
   test("it should not change floors on repeat floor numbers", () => {
     const input = [2, 8, 2, 2, 8, 9, 9, 9];
-    const expected = [190, 2, 8, 2, 8, 9];
+    const expected = [190, [2, 8, 2, 8, 9]];
     const actual = simulateElevator(input);
 
     expect(actual).toEqual(expected);
@@ -56,7 +54,7 @@ describe("Elevator functionality", () => {
 
   test("it should not change floors on repeat floor numbers even with the first floor", () => {
     const input = [3, 3, 9, 2, 9];
-    const expected = [200, 3, 9, 2, 9];
+    const expected = [200, [3, 9, 2, 9]];
     const actual = simulateElevator(input);
 
     expect(actual).toEqual(expected);
@@ -64,7 +62,7 @@ describe("Elevator functionality", () => {
 
   test("it should not move the elevator if only one floor is given", () => {
     const input = [12];
-    const expected = [0, 12];
+    const expected = [0, [12]];
     const actual = simulateElevator(input);
 
     expect(actual).toEqual(expected);
