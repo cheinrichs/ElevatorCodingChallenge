@@ -10,6 +10,7 @@ Please note the following assumptions made in the implementation:
 
 - The height of the building is assumed to be greater than the given floors.
 - There are no floors below 0.
+- If repeat floors are given, the elevator does not add to distance traveled, but does keep the duplicate floor visited in the array
 
 ## Installation
 
