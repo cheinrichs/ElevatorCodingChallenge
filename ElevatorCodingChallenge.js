@@ -1,10 +1,10 @@
-import  moveElevator  from "./elevator.js"
+import simulateElevator from "./elevator.js";
 
-const args = process.argv.slice(2)
+const args = process.argv.slice(2);
 
-if(args.length < 1){
-    console.log('Error: No floors given')
-    process.exit()
+if (args.length < 1) {
+  console.log("Error: No floors given");
+  process.exit();
 }
 
-moveElevator(args)
+simulateElevator(args);
