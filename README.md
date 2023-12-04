@@ -17,13 +17,13 @@ Please note the following assumptions made in the implementation:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/elevator-simulation.git
+   git clone git@github.com:cheinrichs/ElevatorCodingChallenge.git
    ```
 
    Navigate to the project directory:
 
    ```bash
-   cd elevator-simulation
+   cd ElevatorCodingChallenge
    ```
 
    Install dependencies:
