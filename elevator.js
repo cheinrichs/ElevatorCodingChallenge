@@ -11,25 +11,26 @@ function simulateElevator(floors) {
       throw new TypeError("Arguments must be integers");
     }
     if (parsed < 1) {
-      throw new Error("Arguments must be positive integers");
+      throw new TypeError("Arguments must be positive integers");
     }
-    parsedFloors.push(parseInt(elem));
+    parsedFloors.push(parsed);
   });
 
-  const firstFloor = parsedFloors[0];
+  let floorsTraveled = [];
 
   let travelTime = 0;
 
-  let currentFloor = firstFloor;
-  parsedFloors.forEach((floor) => {
+  let previousFloor;
+  parsedFloors.forEach((currentFloor) => {
     let traveled = 0;
-    if (floor === currentFloor) {
+    if (!previousFloor || currentFloor === previousFloor) {
+      previousFloor = currentFloor;
       return;
     }
-    traveled = Math.abs(floor - currentFloor);
+    traveled = Math.abs(currentFloor - previousFloor);
     travelTime += traveled;
 
-    currentFloor = floor;
+    previousFloor = currentFloor;
   });
 
   parsedFloors.unshift(travelTime * SINGLE_FLOOR_TRAVEL_TIME);

@@ -2,9 +2,5 @@ import simulateElevator from "./elevator.js";
 
 const args = process.argv.slice(2);
 
-if (args.length < 1) {
-  console.log("Error: No floors given");
-  process.exit();
-}
-
-simulateElevator(args);
+let result = simulateElevator(args);
+console.log(result);
