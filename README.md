@@ -35,13 +35,13 @@ Please note the following assumptions made in the implementation:
    Run the simulation:
 
    ```bash
-   node elevatorSimulator.js [list of floors to visit]
+   node ElevatorCodingChallenge (list of floors to visit separated by spaces)
    ```
 
    Example:
 
    ```bash
-   node elevatorSimulator.js 12 2 9 1 32
+   node ElevatorCodingChallenge 12 2 9 9 9 1 32
    ```
 
 Output:
