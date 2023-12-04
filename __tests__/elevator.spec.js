@@ -46,9 +46,17 @@ describe("Elevator functionality", () => {
     }).toThrow(expected);
   });
 
-  test("it should correctly handle repeat floors", () => {
-    const input = [2, 8, 2, 2, 8];
-    const expected = [180, 2, 8, 2, 2, 8];
+  test("it should not change floors on repeat floor numbers", () => {
+    const input = [2, 8, 2, 2, 8, 9, 9, 9];
+    const expected = [190, 2, 8, 2, 8, 9];
+    const actual = simulateElevator(input);
+
+    expect(actual).toEqual(expected);
+  });
+
+  test("it should not change floors on repeat floor numbers even with the first floor", () => {
+    const input = [3, 3, 9, 2, 9];
+    const expected = [200, 3, 9, 2, 9];
     const actual = simulateElevator(input);
 
     expect(actual).toEqual(expected);

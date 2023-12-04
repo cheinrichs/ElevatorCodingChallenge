@@ -22,18 +22,21 @@ function simulateElevator(floors) {
 
   let previousFloor;
   parsedFloors.forEach((currentFloor) => {
-    let traveled = 0;
-    if (!previousFloor || currentFloor === previousFloor) {
+    if (currentFloor === previousFloor) {
+      return;
+    }
+    floorsTraveled.push(currentFloor);
+    if (!previousFloor) {
       previousFloor = currentFloor;
       return;
     }
-    traveled = Math.abs(currentFloor - previousFloor);
-    travelTime += traveled;
+
+    travelTime += Math.abs(currentFloor - previousFloor);
 
     previousFloor = currentFloor;
   });
 
-  parsedFloors.unshift(travelTime * SINGLE_FLOOR_TRAVEL_TIME);
-  return parsedFloors;
+  floorsTraveled.unshift(travelTime * SINGLE_FLOOR_TRAVEL_TIME);
+  return floorsTraveled;
 }
 export default simulateElevator;

@@ -10,7 +10,7 @@ Please note the following assumptions made in the implementation:
 
 - The height of the building is assumed to be greater than the given floors.
 - There are no floors below 0.
-- If repeat floors are given, the elevator does not add to distance traveled, but does keep the duplicate floor visited in the array
+- If repeat floors are given, the elevator does not add to distance traveled, and does not report visiting the floor multiple times.
 
 ## Installation
 
@@ -23,7 +23,13 @@ Please note the following assumptions made in the implementation:
    Navigate to the project directory:
 
    ```bash
-    cd elevator-simulation
+   cd elevator-simulation
+   ```
+
+   Install dependencies:
+
+   ```bash
+   npm install
    ```
 
    Run the simulation:
@@ -48,18 +54,24 @@ The output array contains two elements:
 
     Example output:
 
-    bash
-
+    ```bash
     560 12,2,9,1,32
+    ```
 
 Constants
 
     SINGLE_FLOOR_TRAVEL_TIME: The constant representing the time (in seconds) it takes for the elevator to travel between two consecutive floors. Currently set to 10 seconds.
 
-Notes
+Error Handling
 
-    If the input includes non-integer values, the program will exit with an error message: "Arguments must be integers."
+- **Non-Integer Values:**
+  If any of the input values are not valid integers, the function throws a `TypeError` with the message "Arguments must be integers."
 
-License
+- **Values Less Than 1:**
+  If any floor value is less than 1, the function throws a `TypeError` with the message "Arguments must be positive integers."
 
-This project is licensed under the MIT License.
+- **Duplicate Floors:**
+  If repeat floors are provided, the elevator does not add to the distance traveled, and the duplicated floor is not reported.
+
+- **Other Scenarios:**
+  The function ensures that the height of the building is greater than the given floors and that there are no floors below 0.
