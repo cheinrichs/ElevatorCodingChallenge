@@ -2,7 +2,7 @@
   "name": "elevatorcodingchallenge",
   "version": "1.0.0",
   "description": "",
-  "main": "elevator.js",
+  "main": "ElevatorCodingChallenge.js",
   "scripts": {
     "test": "jest"
   },
